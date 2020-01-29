@@ -1,0 +1,174 @@
+main {
+    min-width: 200px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+    padding-top: 20px;
+
+}
+
+fieldset{
+    border: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: left;
+}
+
+#submit, #next, #prev, #back {
+    margin: 20px;
+    padding: 10px;
+
+}
+
+#submit, #back, #next, #prev, input {
+    margin: 10px;
+    padding: 10px;
+    margin-left: 0px;
+}
+
+img {
+
+    margin: 20px;
+    margin-left: 0px;
+}
+
+.bottom-buttons {
+    clear: left;
+    display: block;
+    width: 100%;
+    text-align: left;
+
+}
+
+.button-block {
+    display: block;
+}
+
+#symptoms-list {
+    display: block;
+    margin: 20px;
+    padding: 5px;
+}
+
+section {
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.individual-symptom {
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+}
+
+.individual-symptom label {
+    float:left;
+    width: 4.0em;
+    padding: 10px;
+}
+
+.individual-symptom label span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+}
+
+.individual-symptom input {
+    position: absolute;
+    display: none;
+}
+
+
+.individual-symptom input:checked {
+    width: 100px;
+}
+
+.bunko {
+    background-color: darkred;
+    color: white;
+}
+
+@media only screen and (min-width: 800px){
+    main {
+        max-width: 700px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .main-info {
+        display: flex;
+    }
+
+    img {
+        width: 400px;
+        padding: 0;
+        margin: 0;
+        margin-left: -50px;
+        margin-bottom: -63px;
+    }
+
+    .results-description {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    h2{
+        text-align: center;
+        margin-top: 0px;
+        text-align: left;
+    }
+
+    h1 {
+        padding: 0px;
+        padding-bottom: 15px;
+        text-align: left;
+    }
+
+    h3 {
+        text-align: left;
+    }
+
+    p{
+        text-align: left;
+        font-size: .95rem;
+    }
+
+    .gramps-form-container, .results-description {
+        padding-top: 30px;
+        padding-left: 30px;
+    }
+
+    input, #symptoms-list, #symptoms-display, #submit {
+        margin-left: 0px;
+    }
+
+    #next {
+        margin-left: 0px;
+    }
+
+    fieldset {
+        padding-left: 0px;
+    }
+
+    html {
+        background: lightgray;
+    }
+
+    img {
+        height: 400px;
+    }
+
+
+}
