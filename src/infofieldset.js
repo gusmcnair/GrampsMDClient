@@ -1,58 +1,62 @@
 import React from 'react';
 import IndividualSymptom from './individualsymptom.js'
 import grampsmdContext from './grampsmd_context'
-import {withRouter } from 'react-router';
-const gendersList = ['male', 'female', 'other']
-
-const improvList = ['yes', 'no']
-
+import {withRouter } from 'react-router-dom';
+import inputs_data from './inputs_data';
+import './styling.css';
 
 class InfoFieldset extends React.Component{
     static contextType = grampsmdContext
 
     onSubmit = () => {
-        console.log(this.context);
+        this.props.fetchApiData();
         this.props.history.push('/results')
+    }
+    
+    handleResponse = (response) => {
+        console.log(response.id, response.title, response.ailment, response.treatment, response.illustration)
     }
 
 
     render(){
         return(
-            <fieldset>
-                <legend>Please select your gender.</legend>
-                {gendersList.map((symptom, index) => 
+            <form>
+                <p>
+                    Just a couple more questions – what's the matter, are you in some kind of hurry? Sit back down!
+                </p>
+                <div></div>
+                <h3>Please select your gender.</h3>
+                {inputs_data.genders.map((symptom, index) => 
                         <IndividualSymptom 
                         key={index}
                         symptom_name={symptom} 
                         type='radio'
                         group_name='genders'
-                        fullList={gendersList}
+                        fullList={inputs_data.genders}
                         updateState={this.props.updateState}
                         clearArray={this.props.clearArray}
                         deleteFromState={this.props.deleteFromState}
                         />
                         )}
                         <div class='bottom-buttons'></div>
-                <legend>Are you currently in an improv class?</legend>
-                {improvList.map((symptom, index) => 
+                <h3>Are you currently enrolled in any of those – what are they called, improv classes?</h3>
+                {inputs_data.improv.map((symptom, index) => 
                         <IndividualSymptom 
                         key={index}
                         symptom_name={symptom} 
                         type='radio'
                         group_name='improv'
-                        fullList={improvList}
+                        fullList={inputs_data.improv}
                         updateState={this.props.updateState}
                         clearArray={this.props.clearArray}
                         deleteFromState={this.props.deleteFromState}
                         />
                         )}
                 <div class='bottom-buttons'>
-                <button id='prev' name='prev' onClick={this.props.prevStep}>Previous</button>
                 <button id='submit' name='submit' onClick={this.onSubmit}>Submit</button>
                 </div>
-            </fieldset>
+            </form>
         )
     }
 }
-
 export default withRouter(InfoFieldset)

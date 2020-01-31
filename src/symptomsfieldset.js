@@ -1,30 +1,34 @@
 import React from 'react';
 import IndividualSymptom from './individualsymptom.js';
+import inputs_data from './inputs_data';
+import { Link, Router } from 'react-router-dom'
+import grampsmdContext from './grampsmd_context'
 
-const symptomsList = ['hair loss', 'headache', 'whatever']
+export default class SymptomsFieldset extends React.Component {
+    static contextType = grampsmdContext
 
-export default class SymptomsFieldset extends React.Component{
+    render() {
 
-
-    render(){
-        return(
-            <fieldset>
-                <legend>Please select all of your symptoms below: </legend>
-                    {symptomsList.map((symptom, index) => 
-                        <IndividualSymptom 
+        return (
+            <form>
+                <h3>Please select all of your symptoms: </h3>
+                {inputs_data.symptoms.map((symptom, index) =>
+                    <IndividualSymptom
                         key={index}
-                        symptom_name={symptom} 
+                        symptom_name={symptom}
                         type='checkbox'
                         group_name='symptoms'
                         updateState={this.props.updateState}
                         clearArray={this.props.clearArray}
                         deleteFromState={this.props.deleteFromState}
-                        />
-                        )}
-                        <div class='bottom-buttons'>
-                <button id='next' name='next' onClick={this.props.nextStep}>Next</button>
+                    />
+                )}
+                <div class='bottom-buttons'>
+                    <Router>
+                        <Link to='/formcontinued'><button id='next' name='next'>Next</button></Link>
+                    </Router>
                 </div>
-            </fieldset>
+            </form>
         )
     }
 }

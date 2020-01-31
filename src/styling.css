@@ -14,7 +14,7 @@ fieldset{
 h1 {
     font-size: 2rem;
     line-height: 2.5rem;
-    padding: 20px;
+    padding: 5px;
 }
 
 h2 {
@@ -35,10 +35,18 @@ h2 {
     margin-left: 0px;
 }
 
+p{
+    text-align: left;
+    font-size: .95rem;
+}
+
 img {
 
     margin: 20px;
     margin-left: 0px;
+    width: 260px;
+    height: 300px;
+    border-bottom: 1px solid black;
 }
 
 .bottom-buttons {
@@ -46,6 +54,7 @@ img {
     display: block;
     width: 100%;
     text-align: left;
+    padding-top: 15px;
 
 }
 
@@ -64,6 +73,15 @@ section {
     padding-top: 0px;
 }
 
+legend {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
 .individual-symptom {
     margin:4px;
     background-color:#EFEFEF;
@@ -75,14 +93,14 @@ section {
 
 .individual-symptom label {
     float:left;
-    width: 4.0em;
-    padding: 10px;
+    padding: 3px;
+    margin: 3px;
 }
 
 .individual-symptom label span {
     text-align:center;
-    padding:3px 0px;
     display:block;
+    font-size: .9rem;
 }
 
 .individual-symptom input {
@@ -100,10 +118,23 @@ section {
     color: white;
 }
 
+h3 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+fieldset p {
+    margin-top: 0px;
+}
+
 @media only screen and (min-width: 800px){
     main {
         max-width: 700px;
-        margin-top: 50px;
+        min-height: 540px;
+        margin-top: 30px;
         margin-bottom: 50px;
     }
 
@@ -112,11 +143,11 @@ section {
     }
 
     img {
-        width: 400px;
         padding: 0;
         margin: 0;
+        width: 360px;
         margin-left: -50px;
-        margin-bottom: -63px;
+        margin-bottom: -62px;
     }
 
     .results-description {
@@ -136,17 +167,9 @@ section {
         text-align: left;
     }
 
-    h3 {
-        text-align: left;
-    }
-
-    p{
-        text-align: left;
-        font-size: .95rem;
-    }
+  
 
     .gramps-form-container, .results-description {
-        padding-top: 30px;
         padding-left: 30px;
     }
 
@@ -167,7 +190,8 @@ section {
     }
 
     img {
-        height: 400px;
+        height: 420px;
+        border: 0px;
     }
 
 
