@@ -1,17 +1,25 @@
 import React from 'react';
 import IndividualSymptom from './individualsymptom.js';
-import inputs_data from './inputs_data';
-import { Link, Router } from 'react-router-dom'
-import grampsmdContext from './grampsmd_context'
+import inputs_data from '../utilities/inputs_data';
+import { Link } from 'react-router-dom'
+import grampsmdContext from '../utilities/grampsmd_context'
 
 export default class SymptomsFieldset extends React.Component {
     static contextType = grampsmdContext
 
+    handleSubmitDisabled = () => {
+        if(this.context.symptoms.length < 3){
+            return true;
+        } else return false;
+    }
+
     render() {
+
+        const nextstatus = this.handleSubmitDisabled()
 
         return (
             <form>
-                <h3>Please select all of your symptoms: </h3>
+                <h3>Please select at least three symptoms: </h3>
                 {inputs_data.symptoms.map((symptom, index) =>
                     <IndividualSymptom
                         key={index}
@@ -23,10 +31,8 @@ export default class SymptomsFieldset extends React.Component {
                         deleteFromState={this.props.deleteFromState}
                     />
                 )}
-                <div class='bottom-buttons'>
-                    <Router>
-                        <Link to='/formcontinued'><button id='next' name='next'>Next</button></Link>
-                    </Router>
+                <div className='bottom-buttons'>
+                        <Link to='/formcontinued'><button id='next' name='next' disabled={nextstatus}>Next</button></Link>
                 </div>
             </form>
         )

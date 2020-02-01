@@ -1,24 +1,29 @@
 import React from 'react';
 import IndividualSymptom from './individualsymptom.js'
-import grampsmdContext from './grampsmd_context'
+import grampsmdContext from '../utilities/grampsmd_context'
 import {withRouter } from 'react-router-dom';
-import inputs_data from './inputs_data';
-import './styling.css';
+import inputs_data from '../utilities/inputs_data';
+import '../utilities/styling.css';
 
 class InfoFieldset extends React.Component{
     static contextType = grampsmdContext
 
     onSubmit = () => {
-        this.props.fetchApiData();
         this.props.history.push('/results')
     }
-    
-    handleResponse = (response) => {
-        console.log(response.id, response.title, response.ailment, response.treatment, response.illustration)
+
+    handleSubmitDisabled = () => {
+        if(this.context.genders.length === 0 || this.context.improv.length === 0){
+            return true;
+        } else return false;
     }
 
 
     render(){
+
+        const buttonStatus = this.handleSubmitDisabled();
+        console.log(buttonStatus)
+
         return(
             <form>
                 <p>
@@ -38,7 +43,7 @@ class InfoFieldset extends React.Component{
                         deleteFromState={this.props.deleteFromState}
                         />
                         )}
-                        <div class='bottom-buttons'></div>
+                        <div className='bottom-buttons'></div>
                 <h3>Are you currently enrolled in any of those – what are they called, improv classes?</h3>
                 {inputs_data.improv.map((symptom, index) => 
                         <IndividualSymptom 
@@ -52,8 +57,8 @@ class InfoFieldset extends React.Component{
                         deleteFromState={this.props.deleteFromState}
                         />
                         )}
-                <div class='bottom-buttons'>
-                <button id='submit' name='submit' onClick={this.onSubmit}>Submit</button>
+                <div className='bottom-buttons'>
+                <button id='submit' name='submit' onClick={this.onSubmit} disabled={buttonStatus}>Submit</button>
                 </div>
             </form>
         )
