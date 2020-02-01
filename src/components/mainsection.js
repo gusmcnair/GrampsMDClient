@@ -1,10 +1,10 @@
 import React from 'react';
-import './styling.css';
+import '../utilities/styling.css';
 import InfoFieldset from './infofieldset'
 import SymptomsFieldset from './symptomsfieldset.js'
 import GrampsResults from './grampsresults.js'
 import { Route, Switch, Router } from 'react-router-dom';
-import oldmanpicture from './oldman.jpg';
+import oldmanpicture from '../graphics/oldman.jpg';
 
 
 

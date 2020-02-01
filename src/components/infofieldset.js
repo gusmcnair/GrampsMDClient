@@ -1,9 +1,9 @@
 import React from 'react';
 import IndividualSymptom from './individualsymptom.js'
-import grampsmdContext from './grampsmd_context'
+import grampsmdContext from '../utilities/grampsmd_context'
 import {withRouter } from 'react-router-dom';
-import inputs_data from './inputs_data';
-import './styling.css';
+import inputs_data from '../utilities/inputs_data';
+import '../utilities/styling.css';
 
 class InfoFieldset extends React.Component{
     static contextType = grampsmdContext

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styling.css';
+import '../utilities/styling.css';
 import {Link, Switch, Route, Router} from 'react-router-dom';
 import GrampsMDDescription from './grampsmddescription.js'
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Router} from 'react-router-dom'
-import grampsmdContext from './grampsmd_context'
+import grampsmdContext from '../utilities/grampsmd_context'
 import IndividualSymptom from './individualsymptom'
 
 

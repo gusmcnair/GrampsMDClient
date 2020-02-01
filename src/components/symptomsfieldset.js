@@ -1,8 +1,8 @@
 import React from 'react';
 import IndividualSymptom from './individualsymptom.js';
-import inputs_data from './inputs_data';
+import inputs_data from '../utilities/inputs_data';
 import { Link, Router } from 'react-router-dom'
-import grampsmdContext from './grampsmd_context'
+import grampsmdContext from '../utilities/grampsmd_context'
 
 export default class SymptomsFieldset extends React.Component {
     static contextType = grampsmdContext

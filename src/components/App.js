@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import '../utilities/App.css';
 import HeaderSection from './headersection.js'
 import MainSection from './mainsection.js'
-import './styling.css';
-import grampsmdContext from './grampsmd_context';
+import '../utilities/styling.css';
+import grampsmdContext from '../utilities/grampsmd_context';
 import {Router} from 'react-router-dom'
 
 
