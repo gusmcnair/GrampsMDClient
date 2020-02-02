@@ -9,6 +9,7 @@ class InfoFieldset extends React.Component{
     static contextType = grampsmdContext
 
     onSubmit = () => {
+        this.props.fetchApiData();
         this.props.history.push('/results')
     }
 

@@ -1,60 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+
+
 main {
     min-width: 200px;
     margin: auto;
     background-color: white;
     padding: 40px;
     padding-top: 20px;
+    padding-bottom: 10px;
+    border-radius: 4px;
 
+}
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 fieldset{
     border: 0;
 }
 
-h1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
+#next, #submit, #searchagain {
+    margin-right: 0px;
+    background-color: dodgerblue;
+    width: 70%;
+    border: 0px;
+    border-radius: 4px;
+    padding: 4px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 1px solid lightgray;
+}
+
+#next:disabled, #submit:disabled {
+    background-color: white;
+    color: dodgerblue;
+}
+
+button {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: left;
+}
+
+h1 a {
+    font-size: 3rem;
+    line-height: 3.5rem;
     padding: 5px;
+    text-decoration: none;
+    color: dodgerblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.headerfont {
+    font-style: normal;
+    font-weight: bold;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    margin-bottom: 15px;
+}
+
+.disclaimer {
+    font-size: .7rem;
+    margin-top: -30px;
 }
 
 h2 {
-    font-size: 1.5rem;
-    line-height: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
     text-align: left;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+    color: rgb(110, 110, 110);
 }
 
 #submit, #next, #prev, #back {
-    margin: 20px;
+    margin: 5px;
     padding: 10px;
+    margin-right: -10px;
 
 }
 
-#submit, #back, #next, #prev, input {
-    margin: 10px;
-    padding: 10px;
-    margin-left: 0px;
+
+.tags-div {
+    max-height: 200px;
+    z-index: 100;
+    max-width: 300px;
+    margin-right: 20px;
+    position: relative;
 }
+
 
 p{
     text-align: left;
-    font-size: .95rem;
+    font-size: 1rem;
+    margin-top: 0px;
 }
 
 .main-pic {
 
     margin: 20px;
     margin-left: 0px;
-    width: 260px;
+    width: 250px;
     height: 300px;
     border-bottom: 1px solid black;
+}
+
+.results-pic {
+    margin: 20px;
+    margin-left: 0px;
+    width: 250px;
+    height: 300px;
+    border-bottom: 1px solid black;
+    z-index: 0;
+    position: relative;
 }
 
 .bottom-buttons {
     clear: left;
     display: block;
     width: 100%;
-    text-align: left;
-    padding-top: 15px;
+    text-align: right;
+    padding-top: 40px;
 
 }
 
@@ -84,17 +159,16 @@ legend {
 
 .individual-symptom {
     margin:4px;
-    background-color:#EFEFEF;
+    background-color: azure;
     border-radius:4px;
-    border:1px solid #D0D0D0;
     overflow:auto;
     float:left;
 }
 
 .individual-symptom label {
     float:left;
-    padding: 3px;
-    margin: 3px;
+    padding: 5px;
+    margin: 5px;
 }
 
 .individual-symptom label span {
@@ -114,42 +188,88 @@ legend {
 }
 
 .bunko {
-    background-color: darkred;
+    background-color: dodgerblue;
     color: white;
 }
 
 h3 {
-    font-size: 1rem;
-    line-height: 1.3rem;
+    color: dodgerblue;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: 'uppercase';
     text-align: left;
-    margin-top: 12px;
-    margin-bottom: 8px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+
 }
 
 fieldset p {
     margin-top: 0px;
 }
 
+.result-symptoms{
+    padding: 10px;
+    margin: 3px;
+    line-height: 3rem;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 4px;
+    font-size: .9rem;
+}
+
+.italics {
+    font-style: italic;
+}
+
+h2{
+    text-align: center;
+    text-align: left;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: left;
+    color: dodgerblue;
+}
+
+h4 {
+    color: dodgerblue;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: 'uppercase';
+    text-align: left;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
 @media only screen and (min-width: 800px){
     main {
         max-width: 700px;
-        min-height: 500px;
+        min-height: 540px;
         margin-top: 40px;
         margin-bottom: 40px;
-        border: 1px solid black;
+        border: 1px solid lightgray;
     }
 
     .main-info {
         display: flex;
     }
 
+
     .main-pic {
         padding: 0;
         margin: 0;
         width: 350px;
         margin-left: -50px;
-        margin-top: 26px;
-        margin-bottom: -63px;
+        margin-top: 28px;
+        margin-bottom: -34px;
         height: 420px;
         border: 0px;
     }
@@ -159,8 +279,8 @@ fieldset p {
         margin: 0;
         width: 360px;
         margin-left: -50px;
-        margin-top: 80px;
-        margin-bottom: -63px;
+        margin-top: 0px;
+        margin-bottom: -34px;
         height: 420px;
         border: 0px;
     }
@@ -169,32 +289,13 @@ fieldset p {
         padding-top: 25px;
         padding-bottom: 25px;
     }
-
-    h2{
-        text-align: center;
-        margin-top: 0px;
-        text-align: left;
-    }
-
-    h1 {
-        padding: 0px;
-        margin: 0px;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        text-align: left;
-    }
-
   
 
     .gramps-form-container, .results-description {
         padding-left: 30px;
     }
 
-    input, #symptoms-list, #symptoms-display, #submit {
-        margin-left: 0px;
-    }
-
-    #next {
+    input, #symptoms-list, #symptoms-display {
         margin-left: 0px;
     }
 
@@ -203,7 +304,7 @@ fieldset p {
     }
 
     html {
-        background: lightgray;
+        background: aliceblue;
     }
 
 }

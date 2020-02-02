@@ -20,7 +20,7 @@ export default class SymptomsFieldset extends React.Component {
         return (
             <form>
                 <h3>Please select at least three symptoms: </h3>
-                {inputs_data.symptoms.map((symptom, index) =>
+                {this.context.allSymptoms.map((symptom, index) =>
                     <IndividualSymptom
                         key={index}
                         symptom_name={symptom}

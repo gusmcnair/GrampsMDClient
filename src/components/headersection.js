@@ -7,9 +7,9 @@ export default class HeaderSection extends React.Component {
     render(){
         return(
             <header>
-                <h1>
+                <h1 onClick={this.props.resetState}>
 
-                    <Link to='/'>GrampsMD</Link>
+                    <Link to='/'>Gramps<span className='headerfont'>MD</span></Link>
 
                 </h1>
             </header>
