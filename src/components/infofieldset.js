@@ -59,7 +59,7 @@ class InfoFieldset extends React.Component{
                         />
                         )}
                 <div className='bottom-buttons'>
-                <button id='submit' name='submit' onClick={this.onSubmit} disabled={buttonStatus}>Submit</button>
+                <button id='submit' name='submit' onClick={this.onSubmit} disabled={buttonStatus}>Submit&nbsp;&nbsp;&nbsp;</button>
                 </div>
             </form>
         )

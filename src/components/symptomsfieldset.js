@@ -32,7 +32,7 @@ export default class SymptomsFieldset extends React.Component {
                     />
                 )}
                 <div className='bottom-buttons'>
-                        <Link to='/formcontinued'><button id='next' name='next' disabled={nextstatus}>Next</button></Link>
+                        <Link to='/formcontinued'><button id='next' name='next' disabled={nextstatus}>Next&nbsp;&nbsp;&nbsp;</button></Link>
                 </div>
             </form>
         )
