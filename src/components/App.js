@@ -139,7 +139,8 @@ export default class App extends React.Component {
   }
 
   componentDidMount(){
-    const symptomsApiCall = 'https://fierce-tor-19786.herokuapp.com/api/symptoms'
+    console.log('hidey ho')
+    const symptomsApiCall = `https://fierce-tor-19786.herokuapp.com/api/symptoms`
     fetch(symptomsApiCall)
       .then(response => {
         if(response.ok){
