@@ -39,7 +39,7 @@ export default class App extends React.Component {
   }
 
   fetchApiData = () => {
-    let apiCall = `http://localhost:8000/api/ailments?symptoms=${this.state.symptoms[0]}`
+    let apiCall = `https://fierce-tor-19786.herokuapp.com/api/ailments?symptoms=${this.state.symptoms[0]}`
     for (let i = 1; i < this.state.symptoms.length; i++) {
       apiCall += `&symptoms=${this.state.symptoms[i]}`
     }
@@ -139,7 +139,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount(){
-    const symptomsApiCall = 'http://localhost:8000/api/symptoms'
+    const symptomsApiCall = 'https://fierce-tor-19786.herokuapp.com/api/symptoms'
     fetch(symptomsApiCall)
       .then(response => {
         if(response.ok){
