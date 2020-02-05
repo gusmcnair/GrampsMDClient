@@ -40,8 +40,7 @@ class App extends React.Component {
   }
 
   fetchApiData = () => {
-    //let apiCall = `https://fierce-tor-19786.herokuapp.com/api/ailments?symptoms=${this.state.symptoms[0]}`
-    let apiCall = `http://localhost:8000/api/ailments?symptoms=${this.state.symptoms[0]}`
+    let apiCall = `https://fierce-tor-19786.herokuapp.com/api/ailments?symptoms=${this.state.symptoms[0]}`
     for (let i = 1; i < this.state.symptoms.length; i++) {
       apiCall += `&symptoms=${this.state.symptoms[i]}`
     }
