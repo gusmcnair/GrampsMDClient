@@ -23,10 +23,9 @@ class InfoFieldset extends React.Component{
     render(){
 
         const buttonStatus = this.handleSubmitDisabled();
-        console.log(buttonStatus)
 
         return(
-            <form>
+            <form className='animated fadeIn'>
                 <p>
                     Just a couple more questions – what's the matter, are you in some kind of hurry? Sit back down!
                 </p>

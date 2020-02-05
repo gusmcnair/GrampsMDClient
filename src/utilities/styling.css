@@ -22,6 +22,10 @@ fieldset{
 }
 
 #next, #submit, #searchagain {
+    -moz-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     margin-right: 0px;
     background-color: dodgerblue;
     width: 70%;
@@ -35,6 +39,10 @@ fieldset{
 }
 
 #next:disabled, #submit:disabled {
+    -moz-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     background-color: white;
     color: dodgerblue;
 }
@@ -43,6 +51,29 @@ button {
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
 }
+
+.animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ }
+ 
+ @-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ 
+ @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ 
+ .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ }
+
 
 h1 a {
     font-size: 3rem;
@@ -85,6 +116,7 @@ header {
 .disclaimer {
     font-size: .7rem;
     margin-top: -30px;
+    text-align: center;
 }
 
 h2 {
@@ -136,20 +168,29 @@ p{
 
 .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 1000ms ease-in;
+    transition: opacity 300ms ease-in ;
 }
-/*
-.fade-exit {
+
+.fade-leave {
     opacity: 1;
+  }
+  
+.fade-leave.fade-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in-out 300ms;
+  }
+
+
+
+.transition-group {
+    position: relative;
 }
 
-.fade-exit.fade-exit-active {
-    opacity: 0.01;
-    transition: opacity 1000ms ease-in;
-}*/
-
-div.transition-group {
-    position: relative;
+.transition-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .results-pic {
@@ -167,7 +208,7 @@ div.transition-group {
     display: block;
     width: 100%;
     text-align: right;
-    padding-top: 40px;
+    padding-top: 30px;
 
 }
 
@@ -302,10 +343,7 @@ h4 {
     text-transform: uppercase;
 }
 
-.fade-in {
-    transition: opacity 0.5s;
-    opacity: 1;
-}
+
 
 @media only screen and (min-width: 800px){
     main {

@@ -19,14 +19,14 @@ export default class SymptomsFieldset extends React.Component {
 
         if(this.context.allSymptoms.length === 0){
             return(
-                <div class="loader">
+                <div className="loader">
                     
                 </div>
             )
         }
 
         return (
-            <form className='fade-in'>
+            <form className='animated fadeIn'>
                 <h3>Please select at least three symptoms: </h3>
                 {this.context.allSymptoms.map((symptom, index) =>
                     <IndividualSymptom

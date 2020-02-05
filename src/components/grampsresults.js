@@ -5,17 +5,22 @@ import grampsmdContext from '../utilities/grampsmd_context'
 export default class GrampsResults extends React.Component {
     static contextType = grampsmdContext
 
+
+    handleOpacity = () => {
+            document.getElementById('beginopaque').classList.add('becomevisible')
+}
+
       
       render(){
-        console.log(typeof this.context.ailment)
+
+
         if(this.context.ailment.length === 0){
             return(
-                <div class="loader"></div>
+                <div className="loader"></div>
             )
-        }
+        } else {
         return(
-            <div>
-
+            <div className='animated fadeIn'>
                 <h4>Your diagnosis:</h4>
                 <h2>{this.context.title}</h2>
                 <p>{this.context.ailment}</p> 
@@ -28,5 +33,5 @@ export default class GrampsResults extends React.Component {
                 </div>
             </div>
         )
-    }
+    }}
 }
