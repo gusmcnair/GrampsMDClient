@@ -7,7 +7,12 @@ export default class GrampsResults extends React.Component {
 
       
       render(){
-        console.log(this.context)
+        console.log(typeof this.context.ailment)
+        if(this.context.ailment.length === 0){
+            return(
+                <div class="loader"></div>
+            )
+        }
         return(
             <div>
 

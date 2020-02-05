@@ -17,8 +17,16 @@ export default class SymptomsFieldset extends React.Component {
 
         const nextstatus = this.handleSubmitDisabled()
 
+        if(this.context.allSymptoms.length === 0){
+            return(
+                <div class="loader">
+                    
+                </div>
+            )
+        }
+
         return (
-            <form>
+            <form className='fade-in'>
                 <h3>Please select at least three symptoms: </h3>
                 {this.context.allSymptoms.map((symptom, index) =>
                     <IndividualSymptom
