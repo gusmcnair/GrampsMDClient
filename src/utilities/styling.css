@@ -10,7 +10,14 @@ main {
     padding-top: 20px;
     padding-bottom: 10px;
     border-radius: 4px;
+    text-align: center;
 
+
+}
+
+.errorbox {
+    text-align: right;
+    margin-top: 100px;
 }
 
 * {
@@ -45,11 +52,13 @@ fieldset{
     transition: background-color 0.3s ease;
     background-color: white;
     color: dodgerblue;
+    cursor: default;
 }
 
 button {
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
+    cursor:pointer;
 }
 
 .animated {
@@ -115,7 +124,7 @@ header {
 
 .disclaimer {
     font-size: .7rem;
-    margin-top: -30px;
+    margin-top: 0px;
     text-align: center;
 }
 
@@ -134,7 +143,14 @@ h2 {
     margin: 5px;
     padding: 10px;
     margin-right: -10px;
+    cursor:pointer;
+}
 
+.loading {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-left: 7px;
 }
 
 
@@ -155,11 +171,12 @@ p{
 
 .main-pic {
 
-    margin: 20px;
+    margin: 20px auto;
     margin-left: 0px;
     width: 250px;
     height: 300px;
     border-bottom: 1px solid black;
+    text-align: center;
 }
 
 .fade-enter {
@@ -207,7 +224,7 @@ p{
     clear: left;
     display: block;
     width: 100%;
-    text-align: right;
+    text-align: left;
     padding-top: 30px;
 
 }
@@ -241,6 +258,10 @@ legend {
     line-height: 1.5rem;
     padding-top: 15px;
     padding-bottom: 5px;
+}
+
+form span {
+    cursor: pointer;
 }
 
 .individual-symptom {
@@ -343,6 +364,11 @@ h4 {
     text-transform: uppercase;
 }
 
+.disclaimer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 
 @media only screen and (min-width: 800px){
@@ -368,6 +394,12 @@ h4 {
         margin-bottom: -34px;
         height: 420px;
         border: 0px;
+    }
+
+
+    .disclaimer {
+        margin-top: 30px;
+        margin-bottom: 0px;
     }
 
     .results-pic {

@@ -4,6 +4,7 @@ import inputs_data from '../utilities/inputs_data';
 import { Link } from 'react-router-dom'
 import grampsmdContext from '../utilities/grampsmd_context'
 
+
 export default class SymptomsFieldset extends React.Component {
     static contextType = grampsmdContext
 
@@ -19,9 +20,12 @@ export default class SymptomsFieldset extends React.Component {
 
         if(this.context.allSymptoms.length === 0){
             return(
+                <>
                 <div className="loader">
                     
                 </div>
+                <h3 className='loading'>LOADING... </h3>
+                </>
             )
         }
 

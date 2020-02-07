@@ -18,7 +18,7 @@ import oldmanpeeved from '../graphics/oldmanpeeved.jpeg'
 import oldmanshout from '../graphics/oldmanshout.jpeg'
 import oldmanchild from '../graphics/oldmanchild.jpeg'
 import GrampsMDDescription from './grampsmddescription'
-
+import SymptomsError from './SymptomsError'
 
 
 class App extends React.Component {
@@ -34,6 +34,7 @@ class App extends React.Component {
       ailment: [],
       treatment: [],
       illustration: [],
+      error: false
     }
   }
 
@@ -52,7 +53,19 @@ class App extends React.Component {
       .then(response => {
         this.handleResponse(response)
       })
-      .catch(err => console.log(err))
+      .catch(err => this.handleResultsError(err))
+  }
+
+  handleSymptomsError = (err) => {
+    this.setState({
+      error: true,
+    })
+  }
+
+  handleResultsError = (err) => {
+    this.setState({
+      error: true,
+    })
   }
 
   handleResponse = (response) => {
@@ -144,7 +157,7 @@ class App extends React.Component {
         }
       })
       .then(response => this.handleSymptomsData(response))
-      .catch(err => console.log(err))
+      .catch(err => this.handleSymptomsError(err))
   }
 
   render() {
@@ -171,16 +184,18 @@ class App extends React.Component {
               <Route exact path='/formcontinued' component={GrampsMDDescription} />
             </Switch>
 
-                <section className='main-info '>
-                  <Switch>
+                <section className='main-info'>
 
+                  <Switch>
                     <Route exact path='/'>
                       <article className='img-container'>
                         <img className='main-pic animated fadeIn' src={oldmanpicture} alt='heres a pic of grandpa' />
                       </article>
+                      <SymptomsError error={this.state.error}>
                       <article className='gramps-form-container'>
                         <SymptomsFieldset updateState={this.updateState} deleteFromState={this.deleteFromState} clearArray={this.clearArray} handleChange={this.handleChange} />
                       </article>
+                      </SymptomsError>
                     </Route>
 
                     <Route exact path='/formcontinued'>
@@ -193,8 +208,8 @@ class App extends React.Component {
                     </Route>
 
                     <Route exact path='/results'>
-                      <article className='img-container' className='animated fadeIn'>
-                        <div className='tags-div'>
+                      <article className='img-container'>
+                        <div className='tags-div animated fadeIn'>
                           <h4>Your information:</h4>
                           <p>
                             {
@@ -209,11 +224,13 @@ class App extends React.Component {
                             }
                           </p>
                         </div>
-                        <img className='results-pic' src={this.setIllustration()} alt='heres a pic of grandpa' />
+                        <img className='results-pic animated fadeIn' src={this.setIllustration()} alt='heres a pic of grandpa' />
                       </article>
+                      <SymptomsError error={this.state.error}>
                       <article className='gramps-form-container'>
                         <GrampsResults resetState={this.resetState} />
                       </article>
+                      </SymptomsError>
                     </Route>
 
                   </Switch>

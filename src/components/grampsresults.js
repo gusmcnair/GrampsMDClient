@@ -16,8 +16,12 @@ export default class GrampsResults extends React.Component {
 
         if(this.context.ailment.length === 0){
             return(
-                <div className="loader"></div>
-            )
+                <>
+                <div className="loader">
+                    
+                </div>
+                <h3 className='loading'>LOADING... </h3>
+                </>            )
         } else {
         return(
             <div className='animated fadeIn'>
