@@ -184,62 +184,62 @@ class App extends React.Component {
               <Route exact path='/formcontinued' component={GrampsMDDescription} />
             </Switch>
 
-                <section className='main-info'>
+            <section className='main-info'>
 
-                  <Switch>
-                    <Route exact path='/'>
-                      <article className='img-container'>
-                        <img className='main-pic animated fadeIn' src={oldmanpicture} alt='heres a pic of grandpa' />
-                      </article>
-                      <SymptomsError error={this.state.error}>
-                      <article className='gramps-form-container'>
-                        <SymptomsFieldset updateState={this.updateState} deleteFromState={this.deleteFromState} clearArray={this.clearArray} handleChange={this.handleChange} />
-                      </article>
-                      </SymptomsError>
-                    </Route>
+              <Switch>
+                <Route exact path='/'>
+                  <article className='img-container'>
+                    <img className='main-pic animated fadeIn' src={oldmanpicture} alt='heres a pic of grandpa' />
+                  </article>
+                  <SymptomsError error={this.state.error}>
+                    <article className='gramps-form-container'>
+                      <SymptomsFieldset updateState={this.updateState} deleteFromState={this.deleteFromState} clearArray={this.clearArray} handleChange={this.handleChange} />
+                    </article>
+                  </SymptomsError>
+                </Route>
 
-                    <Route exact path='/formcontinued'>
-                      <article className='img-container'>
-                        <img className='main-pic' src={oldmanpicture} alt='heres a pic of grandpa' />
-                      </article>
-                      <article className='gramps-form-container'>
-                        <InfoFieldset updateState={this.updateState} fetchApiData={this.fetchApiData} deleteFromState={this.deleteFromState} clearArray={this.clearArray} handleChange={this.handleChange} />
-                      </article>
-                    </Route>
+                <Route exact path='/formcontinued'>
+                  <article className='img-container'>
+                    <img className='main-pic' src={oldmanpicture} alt='heres a pic of grandpa' />
+                  </article>
+                  <article className='gramps-form-container'>
+                    <InfoFieldset updateState={this.updateState} fetchApiData={this.fetchApiData} deleteFromState={this.deleteFromState} clearArray={this.clearArray} handleChange={this.handleChange} />
+                  </article>
+                </Route>
 
-                    <Route exact path='/results'>
-                      <article className='img-container'>
-                        <div className='tags-div animated fadeIn'>
-                          <h4>Your information:</h4>
-                          <p>
-                            {
-                              this.state.symptoms.map((symptom, index) => <span key={index + '__' + symptom} className='result-symptoms'> {symptom.replace(/ /g, '_')} </span>)
-                            }
-                            {
-                              this.state.ailment.length === 0 ? <> </> :
-                                <>
-                                  <span className='result-symptoms'> {this.state.genders} </span>
-                                  <span className='result-symptoms'> {this.state.improv}_improv </span>
-                                </>
-                            }
-                          </p>
-                        </div>
-                        <img className='results-pic animated fadeIn' src={this.setIllustration()} alt='heres a pic of grandpa' />
-                      </article>
-                      <SymptomsError error={this.state.error}>
-                      <article className='gramps-form-container'>
-                        <GrampsResults resetState={this.resetState} />
-                      </article>
-                      </SymptomsError>
-                    </Route>
+                <Route exact path='/results'>
+                  <article className='img-container'>
+                    <div className='tags-div animated fadeIn'>
+                      <h4>Your information:</h4>
+                      <p>
+                        {
+                          this.state.symptoms.map((symptom, index) => <span key={index + '__' + symptom} className='result-symptoms'> {symptom.replace(/ /g, '_')} </span>)
+                        }
+                        {
+                          this.state.ailment.length === 0 ? <> </> :
+                            <>
+                              <span className='result-symptoms'> {this.state.genders} </span>
+                              <span className='result-symptoms'> {this.state.improv}_improv </span>
+                            </>
+                        }
+                      </p>
+                    </div>
+                    <img className='results-pic animated fadeIn' src={this.setIllustration()} alt='heres a pic of grandpa' />
+                  </article>
+                  <SymptomsError error={this.state.error}>
+                    <article className='gramps-form-container'>
+                      <GrampsResults resetState={this.resetState} />
+                    </article>
+                  </SymptomsError>
+                </Route>
 
-                  </Switch>
-                </section>
-  
+              </Switch>
+            </section>
+
           </main>
         </grampsmdContext.Provider>
         <div className='disclaimer'>GrampsMD is not serious medical advice and if you think it is, that's kind of on you.</div>
-        </>
+      </>
     );
   }
 }

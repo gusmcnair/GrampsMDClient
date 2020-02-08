@@ -1,6 +1,5 @@
 import React from 'react';
 import IndividualSymptom from './individualsymptom.js';
-import inputs_data from '../utilities/inputs_data';
 import { Link } from 'react-router-dom'
 import grampsmdContext from '../utilities/grampsmd_context'
 
@@ -9,7 +8,7 @@ export default class SymptomsFieldset extends React.Component {
     static contextType = grampsmdContext
 
     handleSubmitDisabled = () => {
-        if(this.context.symptoms.length < 3){
+        if (this.context.symptoms.length < 3) {
             return true;
         } else return false;
     }
@@ -18,13 +17,13 @@ export default class SymptomsFieldset extends React.Component {
 
         const nextstatus = this.handleSubmitDisabled()
 
-        if(this.context.allSymptoms.length === 0){
-            return(
+        if (this.context.allSymptoms.length === 0) {
+            return (
                 <>
-                <div className="loader">
-                    
-                </div>
-                <h3 className='loading'>LOADING... </h3>
+                    <div className="loader">
+
+                    </div>
+                    <h3 className='loading'>LOADING... </h3>
                 </>
             )
         }
@@ -44,7 +43,7 @@ export default class SymptomsFieldset extends React.Component {
                     />
                 )}
                 <div className='bottom-buttons'>
-                        <Link to='/formcontinued'><button id='next' name='next' disabled={nextstatus}>Next&nbsp;&nbsp;&nbsp;</button></Link>
+                    <Link to='/formcontinued'><button id='next' name='next' disabled={nextstatus}>Next&nbsp;&nbsp;&nbsp;</button></Link>
                 </div>
             </form>
         )

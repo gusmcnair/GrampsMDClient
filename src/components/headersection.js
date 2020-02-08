@@ -1,7 +1,6 @@
 import React from 'react';
 import '../utilities/styling.css';
-import {Link, Switch, Route} from 'react-router-dom';
-import GrampsMDDescription from './grampsmddescription.js'
+import {Link} from 'react-router-dom';
 
 export default class HeaderSection extends React.Component {
     render(){
