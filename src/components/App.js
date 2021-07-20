@@ -241,9 +241,6 @@ class App extends React.Component {
         <div className='disclaimer'>GrampsMD is not serious medical advice and if you think it is, that's kind of on you.</div>
       </>
     );
-
-    var resultsPic = document.getElementsByClassName('results-pic')[0]
-    resultsPic.classList.remove("hidden-pic")
   }
 }
 
