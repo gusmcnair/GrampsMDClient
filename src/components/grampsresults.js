@@ -12,6 +12,9 @@ export default class GrampsResults extends React.Component {
 
 
     render() {
+        
+        var resultsPic = document.getElementsByClassName('results-pic')[0]
+        resultsPic.classList.remove("hidden-pic")
 
 
         if (this.context.ailment.length === 0) {
