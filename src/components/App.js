@@ -20,7 +20,6 @@ import oldmanchild from '../graphics/oldmanchild.jpeg'
 import GrampsMDDescription from './grampsmddescription'
 import SymptomsError from './SymptomsError'
 
-
 class App extends React.Component {
 
   constructor(props) {
@@ -118,6 +117,10 @@ class App extends React.Component {
 
 
   setIllustration = () => {
+    
+    var resultsPic = document.getElementsByClassName('results-pic')[0]
+    resultsPic.style.display = 'block'
+    
     if (this.state.illustration === 'oldmanpeeved') {
       return oldmanpeeved
     } else if (this.state.illustration === 'oldmansad') {
@@ -224,7 +227,7 @@ class App extends React.Component {
                         }
                       </p>
                     </div>
-                    <img className='results-pic animated fadeIn' src={this.setIllustration()} alt='heres a pic of grandpa' />
+                    <img className='results-pic animated fadeIn' style="display:none" src={this.setIllustration()} alt='heres a pic of grandpa' />
                   </article>
                   <SymptomsError error={this.state.error}>
                     <article className='gramps-form-container'>
