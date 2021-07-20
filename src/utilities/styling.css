@@ -45,6 +45,10 @@ fieldset{
     border: 1px solid lightgray;
 }
 
+.hidden-pic {
+    display: none;
+}
+
 #next:disabled, #submit:disabled {
     -moz-transition: background-color 0.3s ease;
     -o-transition: background-color 0.3s ease;
