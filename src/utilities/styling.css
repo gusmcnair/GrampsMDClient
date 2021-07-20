@@ -46,7 +46,7 @@ fieldset{
 }
 
 .hidden-pic {
-    display: none;
+    visibility: hidden;
 }
 
 #next:disabled, #submit:disabled {
