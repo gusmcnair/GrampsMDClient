@@ -118,6 +118,7 @@ class App extends React.Component {
 
   setIllustration = () => {
     
+    console.log('setting illustration')
     var resultsPic = document.getElementsByClassName('results-pic')[0]
     resultsPic.style.display = 'block'
     
