@@ -118,10 +118,6 @@ class App extends React.Component {
 
   setIllustration = () => {
     
-    console.log('setting illustration')
-    var resultsPic = document.getElementsByClassName('results-pic')[0]
-    resultsPic.style.display = 'block'
-    
     if (this.state.illustration === 'oldmanpeeved') {
       return oldmanpeeved
     } else if (this.state.illustration === 'oldmansad') {
@@ -245,6 +241,10 @@ class App extends React.Component {
         <div className='disclaimer'>GrampsMD is not serious medical advice and if you think it is, that's kind of on you.</div>
       </>
     );
+
+    console.log('setting illustration')
+    var resultsPic = document.getElementsByClassName('results-pic')[0]
+    resultsPic.style.display = 'block'
   }
 }
 
