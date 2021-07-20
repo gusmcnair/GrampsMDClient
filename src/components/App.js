@@ -224,7 +224,7 @@ class App extends React.Component {
                         }
                       </p>
                     </div>
-                    <img className='results-pic animated fadeIn' style="display:none" src={this.setIllustration()} alt='heres a pic of grandpa' />
+                    <img className='results-pic animated fadeIn hidden-pic' src={this.setIllustration()} alt='heres a pic of grandpa' />
                   </article>
                   <SymptomsError error={this.state.error}>
                     <article className='gramps-form-container'>
@@ -242,9 +242,8 @@ class App extends React.Component {
       </>
     );
 
-    console.log('setting illustration')
     var resultsPic = document.getElementsByClassName('results-pic')[0]
-    resultsPic.style.display = 'block'
+    resultsPic.classList.remove("hidden-pic")
   }
 }
 
