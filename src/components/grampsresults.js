@@ -10,11 +10,12 @@ export default class GrampsResults extends React.Component {
         document.getElementById('beginopaque').classList.add('becomevisible')
     }
 
-
-    render() {
-        
+    componentDidMount() {
         var resultsPic = document.getElementsByClassName('results-pic')[0]
         resultsPic.classList.remove("hidden-pic")
+    }
+
+    render() {
 
 
         if (this.context.ailment.length === 0) {
